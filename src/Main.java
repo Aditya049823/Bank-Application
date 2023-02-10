@@ -11,7 +11,7 @@ public class Main {
         int amount=sc.nextInt();
 
         SBIAccount myAcc=new SBIAccount(name,amount,password);
-        System.out.println("Your account has been created with account number"+myAcc.getAccountno());
+        System.out.println("Your account with SBI has been created with account number"+myAcc.getAccountno());
 
         System.out.println("Your balance is"+myAcc.getBalance());
 
@@ -28,8 +28,26 @@ public class Main {
         System.out.println(myAcc.withdraw(val,pass));
         System.out.println("Current balance is"+myAcc.getBalance());
 
-        System.out.println("Your ROI will be"+myAcc.calculateInterest(3));
+        System.out.println("Your ROI for SBI will be"+myAcc.calculateInterest(3));
 
 
+        HDFC newACC= new HDFC(name,amount,password);
+        System.out.println("Your account with HDFC is created with account number"+newACC.getAccountNo());
+
+        System.out.println("Account balance is "+newACC.getBalance());
+
+        //deposit with hdfc
+        System.out.println(newACC.depositMoney(5000));
+        System.out.println("The updated balance for HDFC is"+newACC.getBalance());
+
+        //withdraw
+        System.out.println("Enter the amount to be withdrawn");
+        int val2=sc.nextInt();
+        System.out.println("Enter your password");
+        String ip=sc.next();
+        System.out.println(newACC.withdraw(val2,ip));
+        System.out.println("The current balance is"+newACC.getBalance());
+
+        System.out.println("The ROI for HDFC is"+newACC.calculateInterest(3));
     }
 }
